@@ -19,3 +19,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+This work is heavily inspired by SDL2, and as such, even though this library
+is wrapping only native platform libraries, I have taken a few liberties with
+enums, macros, and function signatures from SDL. As such I say a large thank you
+to SDL2, its many contributors, and Sam Lantinga. Attribution for the inspiration
+of this work:
+
+Sam Lantinga <slouken@libsdl.org>
+https://github.com/libsdl-org/SDL

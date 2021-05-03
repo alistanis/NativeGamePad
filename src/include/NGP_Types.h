@@ -1,5 +1,8 @@
+
+
 #pragma once
 
+#include <stdint.h>
 
 /* Some compilers use a special export keyword */
 #ifndef DECLSPEC
@@ -40,3 +43,51 @@
 
 #define NGP_THUMBSTICK_AXIS_MIN   (-32768)
 #define NGP_THUMBSTICK_AXIS_MAX   32767
+
+
+typedef enum {
+  NGP_GamePadAxisTypeLeftX,
+  NGP_GamePadAxisTypeLeftY,
+  NGP_GamePadAxisTypeRightX,
+  NGP_GamePadAxisTypeRightY,
+  NGP_GamePadAxisTypeTriggerLeft,
+  NGP_GamePadAxisTypeTriggerRight,
+} NGP_GamePadAxisType;
+
+/**
+ *  The list of buttons available from a controller
+ */
+typedef enum
+{
+  NGP_GamePadButtonInvalid = -1,
+  NGP_GamePadButtonA,
+  NGP_GamePadButtonB,
+  NGP_GamePadButtonX,
+  NGP_GamePadButtonY,
+  NGP_GamePadButtonBack,
+  NGP_GamePadButtonGuide,
+  NGP_GamePadButtonStart,
+  NGP_GamePadButtonLeftStick,
+  NGP_GamePadButtonRightStick,
+  NGP_GamePadButtonLeftShoulder,
+  NGP_GamePadButtonRightShoulder,
+  NGP_GamePadButtonDPadUp,
+  NGP_GamePadButtonDPadDown,
+  NGP_GamePadButtonDPadLeft,
+  NGP_GamePadButtonDPadRight,
+  NGP_GamePadButtonMisc1,    /* Xbox Series X share button, PS5 microphone button, Nintendo Switch Pro capture button */
+  NGP_GamePadButtonPaddle1,  /* Xbox Elite paddle P1 */
+  NGP_GamePadButtonPaddle2,  /* Xbox Elite paddle P3 */
+  NGP_GamePadButtonPaddle3,  /* Xbox Elite paddle P2 */
+  NGP_GamePadButtonPaddle4,  /* Xbox Elite paddle P4 */
+  NGP_GamePadButtonTouchpad, /* PS4/PS5 touchpad button */
+  NGP_GamePadButtonMax,
+} NGP_GamePadButtonType;
+
+typedef enum {
+  NGP_GamePadSensorAccelerometer,
+  NGP_GamePadSensorGyroscope,
+} NGP_GamePadSensorType;
+
+typedef int64_t NGP_GamePadID;
+typedef int64_t NGP_Timestamp;

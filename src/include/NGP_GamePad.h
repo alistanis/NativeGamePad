@@ -1,6 +1,7 @@
 #pragma once
 
 #include "NGP_Types.h"
+#include "NGP_Event.h"
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -36,45 +37,6 @@ typedef struct {
 DECLSPEC double NGPCALL clamp(double v, double low, double high);
 DECLSPEC double NGPCALL normalize_axis_double(double d);
 DECLSPEC NGP_Vector2 NGPCALL NormalizeAxis(NGP_Vector2 v);
-
-typedef enum {
-  NGP_GamePadAxisTypeLeftX,
-  NGP_GamePadAxisTypeLeftY,
-  NGP_GamePadAxisTypeRightX,
-  NGP_GamePadAxisTypeRightY,
-  NGP_GamePadAxisTypeTriggerLeft,
-  NGP_GamePadAxisTypeTriggerRight,
-} NGP_GamePadAxisType;
-
-/**
- *  The list of buttons available from a controller
- */
-typedef enum
-{
-  NGP_GamePadButtonInvalid = -1,
-  NGP_GamePadButtonA,
-  NGP_GamePadButtonB,
-  NGP_GamePadButtonX,
-  NGP_GamePadButtonY,
-  NGP_GamePadButtonBack,
-  NGP_GamePadButtonGuide,
-  NGP_GamePadButtonStart,
-  NGP_GamePadButtonLeftStick,
-  NGP_GamePadButtonRightStick,
-  NGP_GamePadButtonLeftShoulder,
-  NGP_GamePadButtonRightShoulder,
-  NGP_GamePadButtonDPadUp,
-  NGP_GamePadButtonDPadDown,
-  NGP_GamePadButtonDPadLeft,
-  NGP_GamePadButtonDPadRight,
-  NGP_GamePadButtonMisc1,    /* Xbox Series X share button, PS5 microphone button, Nintendo Switch Pro capture button */
-  NGP_GamePadButtonPaddle1,  /* Xbox Elite paddle P1 */
-  NGP_GamePadButtonPaddle2,  /* Xbox Elite paddle P3 */
-  NGP_GamePadButtonPaddle3,  /* Xbox Elite paddle P2 */
-  NGP_GamePadButtonPaddle4,  /* Xbox Elite paddle P4 */
-  NGP_GamePadButtonTouchpad, /* PS4/PS5 touchpad button */
-  NGP_GamePadButtonMax,
-} NGP_GamePadButtonType;
 
 typedef struct NGP_GamePad NGP_GamePad;
 
