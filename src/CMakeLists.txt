@@ -1,1 +1,3 @@
-add_subdirectory(MacOS)
+include_directories(include)
+
+add_subdirectory(lib)
