@@ -42,16 +42,19 @@ typedef struct NGP_GamePad NGP_GamePad;
 
 extern DECLSPEC void NGPCALL NGP_Initialize(void);
 
+
+extern DECLSPEC int NGPCALL NGP_NumGamePads();
+
 /**
  * Returns a new NGP_GamePad* on success or a nullptr on failure
  * @param joystickIndex the SDL joystick index for this game pad
  * @return NGP_GamePad* or null
  */
 
-extern DECLSPEC NGP_GamePad* NGPCALL NGP_GamePadOpen(int joystickIndex);
+extern DECLSPEC NGP_GamePad* NGPCALL NGP_GamePadOpen(int index);
 
 /**
- * Frees a gamepad that was opened and closes it on the SDL side
+ * Frees a gamepad that was opened
  * @param p
  */
 extern DECLSPEC void NGPCALL NGP_GamePadFree(NGP_GamePad* p);
