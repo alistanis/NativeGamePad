@@ -408,8 +408,9 @@ void NGP_Initialize(void) {
   }
 
   for(;;) {
+    // running the darwin run loop is what actually lets our callbacks fire and lets us detect when
+    // controllers are unplugged, etc
     while (CFRunLoopRunInMode(NGP_DARWIN_RUN_LOOP, 0, TRUE) == kCFRunLoopRunHandledSource) {
-      /* no-op. Callback fires once per existing device. */
     }
   }
 
