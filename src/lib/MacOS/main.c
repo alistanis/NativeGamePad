@@ -8,6 +8,7 @@ int main() {
   for (int i = 0; i < num_gamepads; i++) {
     NGP_GamePad* p = NGP_GamePadOpen(i);
     printf("%s\n", NGP_GamePadName(p));
+    printf("%d\n", NGP_GamePadIsAttached(p));
     NGP_GamePadFree(p);
   }
 
