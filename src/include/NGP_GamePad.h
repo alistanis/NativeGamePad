@@ -41,28 +41,28 @@ freely, subject to the following restrictions:
 */
 #pragma once
 
-#include "NGP_Types.h"
-#include "NGP_Event.h"
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include "NGP_Event.h"
+#include "NGP_Types.h"
 
 /**
  * Trivially copyable touchpad finger data struct
  */
 typedef struct {
-  int Touchpad;
-  int Finger;
-  int ReturnValue;
-  uint8_t State;
-  float X;
-  float Y;
-  float Pressure;
+    int     Touchpad;
+    int     Finger;
+    int     ReturnValue;
+    uint8_t State;
+    float   X;
+    float   Y;
+    float   Pressure;
 } NGP_TouchpadFinger;
 
 typedef struct {
-  uint8_t R;
-  uint8_t G;
-  uint8_t B;
+    uint8_t R;
+    uint8_t G;
+    uint8_t B;
 } NGP_Color;
 
 const NGP_Color NGP_Red;
@@ -71,12 +71,12 @@ const NGP_Color NGP_Blue;
 const NGP_Color NGP_Purple;
 
 typedef struct {
-  double X;
-  double Y;
+    double X;
+    double Y;
 } NGP_Vector2;
 
-DECLSPEC double NGPCALL clamp(double v, double low, double high);
-DECLSPEC double NGPCALL normalize_axis_double(double d);
+DECLSPEC double NGPCALL      clamp(double v, double low, double high);
+DECLSPEC double NGPCALL      normalize_axis_double(double d);
 DECLSPEC NGP_Vector2 NGPCALL NormalizeAxis(NGP_Vector2 v);
 
 typedef struct NGP_GamePad NGP_GamePad;
@@ -151,7 +151,9 @@ extern DECLSPEC int NGPCALL NGP_GamePadNumTouchpadFingers(NGP_GamePad* p, int to
  * @param finger
  * @return
  */
-extern DECLSPEC NGP_TouchpadFinger NGPCALL NGP_GamePadTouchpadFingerData(NGP_GamePad* p, int touchpad, int finger);
+extern DECLSPEC NGP_TouchpadFinger NGPCALL NGP_GamePadTouchpadFingerData(NGP_GamePad* p,
+                                                                         int          touchpad,
+                                                                         int          finger);
 
 /**
  * Returns the SDL JoystickID for this game pad
@@ -165,21 +167,21 @@ extern DECLSPEC int32_t NGPCALL NGP_GamePadJoystickID(NGP_GamePad* p);
  * @param p
  * @return
  */
-//SDL_Joystick* NGP_GamePadJoystick(NGP_GamePad* p);
+// SDL_Joystick* NGP_GamePadJoystick(NGP_GamePad* p);
 
 /**
  * Returns the type of this gamepad
  * @param p
  * @return
  */
-//SDL_GameControllerType NGP_GamePadType(NGP_GamePad* p);
+// SDL_GameControllerType NGP_GamePadType(NGP_GamePad* p);
 
 /**
  * Returns the internal SDL_GameController*
  * @param p
  * @return
  */
-//SDL_GameController* NGP_GamePadSDL_GameController(NGP_GamePad* p);
+// SDL_GameController* NGP_GamePadSDL_GameController(NGP_GamePad* p);
 
 /**
  * Returns the value of the thumbstick left x axis
@@ -278,7 +280,10 @@ extern DECLSPEC uint16_t NGPCALL NGP_GamePadProductVersion(NGP_GamePad* p);
  * @param duration_ms
  * @return
  */
-extern DECLSPEC int NGPCALL NGP_GamePadRumble(NGP_GamePad* p, uint16_t low_freq, uint16_t high_freq, uint32_t duration_ms);
+extern DECLSPEC int NGPCALL NGP_GamePadRumble(NGP_GamePad* p,
+                                              uint16_t     low_freq,
+                                              uint16_t     high_freq,
+                                              uint32_t     duration_ms);
 
 /**
  * Returns whether or not rumble is supported on this game pad
@@ -295,7 +300,10 @@ extern DECLSPEC bool NGPCALL NGP_GamePadRumbleSupported(NGP_GamePad* p);
  * @param duration_ms
  * @return
  */
-extern DECLSPEC int NGPCALL NGP_GamePadRumbleTriggers(NGP_GamePad* p, uint16_t left, uint16_t right, uint32_t duration_ms);
+extern DECLSPEC int NGPCALL NGP_GamePadRumbleTriggers(NGP_GamePad* p,
+                                                      uint16_t     left,
+                                                      uint16_t     right,
+                                                      uint32_t     duration_ms);
 
 /**
  * Returns whether or not this game pad supports trigger rumble
@@ -311,7 +319,9 @@ extern DECLSPEC bool NGPCALL NGP_GamePadRumbleTriggersSupported(NGP_GamePad* p);
  * @param duration_ms
  * @return
  */
-extern DECLSPEC int NGPCALL NGP_GamePadRumbleLeftTrigger(NGP_GamePad* p, uint16_t left, uint32_t duration_ms);
+extern DECLSPEC int NGPCALL NGP_GamePadRumbleLeftTrigger(NGP_GamePad* p,
+                                                         uint16_t     left,
+                                                         uint32_t     duration_ms);
 
 /**
  * Start a rumble effect in the right trigger
@@ -320,7 +330,9 @@ extern DECLSPEC int NGPCALL NGP_GamePadRumbleLeftTrigger(NGP_GamePad* p, uint16_
  * @param duration_ms
  * @return
  */
-extern DECLSPEC int NGPCALL NGP_GamePadRumbleRightTrigger(NGP_GamePad* p, uint16_t right, uint32_t duration_ms);
+extern DECLSPEC int NGPCALL NGP_GamePadRumbleRightTrigger(NGP_GamePad* p,
+                                                          uint16_t     right,
+                                                          uint32_t     duration_ms);
 
 /**
  * Returns whether or not this game pad has a programmable LED
